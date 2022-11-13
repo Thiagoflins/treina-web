@@ -10,6 +10,8 @@ public class Turma {
     @GeneratedValue(strategy=GenerationType.AUTO)
     public static Integer idTurma;
     Integer idAluno = Aluno.idAluno;
+    Integer idProfessor = Professor.idProfessor;
+    Integer idCurso = Curso.idCurso;
     float valor;
     
 }
