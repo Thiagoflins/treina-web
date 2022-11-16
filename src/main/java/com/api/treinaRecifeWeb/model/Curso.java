@@ -1,28 +1,37 @@
 package com.api.treinaRecifeWeb.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.hibernate.hql.internal.ast.tree.IdentNode;
+
+@Entity
 public class Curso {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    public static Integer idCurso;
-    String nomeCurso;
-    float chAula;
-    float chTotal;
-    String turno;
-    float valor;
-    Integer seg;
-    Integer ter;
-    Integer qua;
-    Integer qui;
-    Integer sex;
-    Integer sab;
-    
-    public Curso(String nomeCurso, float chAula, float chTotal, String turno, float valor, Integer seg, Integer ter,
-            Integer qua, Integer qui, Integer sex, Integer sab) {
+    private int idCurso;
+    private String nomeCurso;
+    private float chAula;
+    private float chTotal;
+    private String turno;
+    private float valor;
+    private int seg;
+    private int ter;
+    private int qua;
+    private int qui;
+    private int sex;
+    private int sab;
+
+    public Curso() {
+
+    }
+
+    public Curso(int idcurso, String nomeCurso, float chAula, float chTotal, String turno, float valor, int seg, int ter,
+            int qua, int qui, int sex, int sab) {
+        this.idCurso = idCurso;
         this.nomeCurso = nomeCurso;
         this.chAula = chAula;
         this.chTotal = chTotal;
@@ -36,11 +45,11 @@ public class Curso {
         this.sab = sab;
     }
 
-    public static Integer getIdCurso() {
+    public int getIdCurso() {
         return idCurso;
     }
-    public static void setIdCurso(Integer idCurso) {
-        Curso.idCurso = idCurso;
+    public void setIdCurso(int idCurso) {
+        this.idCurso = idCurso;
     }
     public String getNomeCurso() {
         return nomeCurso;
@@ -72,41 +81,40 @@ public class Curso {
     public void setValor(float valor) {
         this.valor = valor;
     }
-    public Integer getSeg() {
+    public int getSeg() {
         return seg;
     }
-    public void setSeg(Integer seg) {
+    public void setSeg(int seg) {
         this.seg = seg;
     }
-    public Integer getTer() {
+    public int getTer() {
         return ter;
     }
-    public void setTer(Integer ter) {
+    public void setTer(int ter) {
         this.ter = ter;
     }
-    public Integer getQua() {
+    public int getQua() {
         return qua;
     }
-    public void setQua(Integer qua) {
+    public void setQua(int qua) {
         this.qua = qua;
     }
-    public Integer getQui() {
+    public int getQui() {
         return qui;
     }
-    public void setQui(Integer qui) {
+    public void setQui(int qui) {
         this.qui = qui;
     }
-    public Integer getSex() {
+    public int getSex() {
         return sex;
     }
-    public void setSex(Integer sex) {
+    public void setSex(int sex) {
         this.sex = sex;
     }
-    public Integer getSab() {
+    public int getSab() {
         return sab;
     }
-    public void setSab(Integer sab) {
+    public void setSab(int sab) {
         this.sab = sab;
-    }
-    
+    }   
 }

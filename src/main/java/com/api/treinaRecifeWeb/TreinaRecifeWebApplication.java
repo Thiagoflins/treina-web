@@ -9,5 +9,4 @@ public class TreinaRecifeWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TreinaRecifeWebApplication.class, args);
 	}
-
 }

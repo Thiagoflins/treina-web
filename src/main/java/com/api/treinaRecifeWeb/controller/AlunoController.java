@@ -1,10 +1,12 @@
 package com.api.treinaRecifeWeb.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.treinaRecifeWeb.model.Aluno;
+import com.api.treinaRecifeWeb.repository.AlunoRepository;
 
 @RestController
 public class AlunoController {
@@ -18,4 +20,7 @@ public class AlunoController {
         @RequestParam(name = "cpf", required = false, defaultValue = "null")String cpf) {
         return new Aluno(idAluno, nome, telefone, endereco, cpf); 
     }   
+
+    @Autowired
+    private AlunoRepository alunoRepository;
 }

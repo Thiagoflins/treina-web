@@ -1,20 +1,26 @@
 package com.api.treinaRecifeWeb.model;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Aluno {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    public static Integer idAluno;
-    String nome;
-    String telefone;
-    String endereco;
-    String cpf;
+    private int idAluno;
+    private String nome;
+    private String telefone;
+    private String endereco;
+    private String cpf;
+
+    public Aluno() {
+
+    }
  
-    public Aluno(Integer idAluno, String nome, String telefone, String endereco, String cpf) {
+    public Aluno(int idAluno, String nome, String telefone, String endereco, String cpf) {
         this.idAluno = idAluno;
         this.nome = nome;
         this.telefone = telefone;
@@ -22,10 +28,10 @@ public class Aluno {
         this.cpf = cpf;
     }
 
-    public Integer getIdAluno() {
+    public int getIdAluno() {
         return idAluno;
     }
-    public void setIdAluno(Integer idAluno) {
+    public void setIdAluno(int idAluno) {
         this.idAluno = idAluno;
     }
     public String getNome() {

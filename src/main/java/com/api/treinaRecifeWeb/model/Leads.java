@@ -2,37 +2,44 @@ package com.api.treinaRecifeWeb.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Leads {
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    public static Integer idLead;
-    String nomeLead;
-    String telefoneLead;
-    Date dataDeCadastro;
-    String status2;
-    Date dataNovoContato;
-    String observacao;
+    public int idLead;
+    private String nomeLead;
+    private String telefoneLead;
+    private Date dataDeCadastro;
+    private String status;
+    private Date dataNovoContato;
+    private String observacao;
+
+    public Leads() {
+
+    }
     
-    public Leads(String nomeLead, String telefoneLead, Date dataDeCadastro, String status2, Date dataNovoContato,
+    public Leads(int idLedad, String nomeLead, String telefoneLead, Date dataDeCadastro, String status, Date dataNovoContato,
             String observacao) {
+        this.idLead = idLedad;
         this.nomeLead = nomeLead;
         this.telefoneLead = telefoneLead;
         this.dataDeCadastro = dataDeCadastro;
-        this.status2 = status2;
+        this.status = status;
         this.dataNovoContato = dataNovoContato;
         this.observacao = observacao;
     }
 
-    public static Integer getIdLead() {
-        return idLead;
+    public int getIdLead() {
+       return idLead;
     }
-    public static void setIdLead(Integer idLead) {
-        Leads.idLead = idLead;
+    public void setIdLead(int idLead) {
+        this.idLead = idLead;
     }
     public String getNomeLead() {
         return nomeLead;
@@ -52,11 +59,11 @@ public class Leads {
     public void setDataDeCadastro(Date dataDeCadastro) {
         this.dataDeCadastro = dataDeCadastro;
     }
-    public String getStatus2() {
-        return status2;
+    public String getStatus() {
+        return status;
     }
-    public void setStatus2(String status2) {
-        this.status2 = status2;
+    public void setStatus(String status) {
+        this.status = status;
     }
     public Date getDataNovoContato() {
         return dataNovoContato;
